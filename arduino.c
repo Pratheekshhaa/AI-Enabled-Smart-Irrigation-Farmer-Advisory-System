@@ -9,9 +9,7 @@
 
 ESP8266WebServer server(SERVER_PORT);
 
-// -------------------------------------------------------------------
 // Connect to WiFi
-// -------------------------------------------------------------------
 void connectWiFi() {
   WiFi.mode(WIFI_STA);
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
