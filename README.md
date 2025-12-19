@@ -119,104 +119,73 @@ Dashboard is hosted directly on Raspberry Pi.
 1. SSH or open terminal using **RealVNC**
 2. Navigate to project folder:
  ```bash 
-cd smartfarm/smart_farm```
-Activate virtual environment:
-
-bash
+cd smartfarm/smart_farm
+``` 
+3. Activate virtual environment:
+```bash
 source smartenv/bin/activate
-Run the server:
-
-bash
-Copy code
+```
+4. Run the server:
+```bash
 python3 agent.py
-Open browser:
-
-cpp
-Copy code
+```
+5. Open browser:
+```http
 http://<raspberry_pi_ip>:5000
+```
 The web server runs continuously and hosts the dashboard.
 
-ESP8266 (Arduino IDE)
-Open Arduino IDE
-
-Select board: NodeMCU ESP8266
-
-Paste ESP8266 code
-
-Set WiFi credentials:
-
-cpp
-Copy code
+### ESP8266 (Arduino IDE)
+1. Open Arduino IDE
+2. Select board: NodeMCU ESP8266
+3. Paste ESP8266 code
+4. Set WiFi credentials:
+```c
 #define WIFI_SSID "your_wifi"
 #define WIFI_PASSWORD "your_password"
-Upload code
-
-Open Serial Monitor (115200 baud)
-
+```
+5. Upload code
+6. Open Serial Monitor (115200 baud)
 You will see:
-
-csharp
-Copy code
+```c
 ESP IP Address → 192.168.x.x
 💧 Pump TRIGGERED by Raspberry Pi → 5 seconds
-🔁 Auto-Watering Logic
+```
+## Auto-Watering Logic
 Pump is triggered only when:
-
-Soil is dry OR
-
-Temperature exceeds threshold
+- Soil is dry OR
+- Temperature exceeds threshold
 AND
-
-No rain is predicted in next 24 hours
-
+- No rain is predicted in next 24 hours
 This avoids:
+- Over-watering
+- Wasting water during rainfall
 
-Over-watering
-
-Wasting water during rainfall
-
-Testing Summary
-Sensor readings verified against real instruments
-
-ESP ↔ Pi communication tested via REST API
-
-Auto-watering validated under simulated conditions
-
-Weather forecast accuracy cross-checked
-
-UI tested across mobile & desktop
-
+## Testing Summary
+- Sensor readings verified against real instruments
+- ESP ↔ Pi communication tested via REST API
+- Auto-watering validated under simulated conditions
+- Weather forecast accuracy cross-checked
+- UI tested across mobile & desktop
 All components performed as expected.
 
-🔮 Future Enhancements
-Analog soil moisture sensing (ADC)
+## Future Enhancements
+- Analog soil moisture sensing (ADC)
+- ML-based irrigation prediction
+- SMS / WhatsApp alerts
+- Multi-zone irrigation
+- Cloud dashboard integration
+- Historical data analytics
 
-ML-based irrigation prediction
+## Technologies Used
+- Python 3
+- ESP8266 Arduino Core
+- HTML / CSS / JavaScript
+- OpenWeather API
+- REST APIs
+- Raspberry Pi GPIO
+- RealVNC
+- Arduino IDE
 
-SMS / WhatsApp alerts
-
-Multi-zone irrigation
-
-Cloud dashboard integration
-
-Historical data analytics
-
-📚 Technologies Used
-Python 3
-
-ESP8266 Arduino Core
-
-HTML / CSS / JavaScript
-
-OpenWeather API
-
-REST APIs
-
-Raspberry Pi GPIO
-
-RealVNC
-
-Arduino IDE
-
-👨‍🌾 Conclusion
+## Conclusion
 This project demonstrates a complete end-to-end smart agriculture solution combining IoT, weather intelligence, and automation to optimize water usage and improve farming efficiency.
