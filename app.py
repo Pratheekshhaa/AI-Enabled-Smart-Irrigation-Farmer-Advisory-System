@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-# IMPROVED AGENT.PY – Better UI + instant weather updates + Rain Forecast Display (24h)
+#this is the main agent file that is run on raspberry pi terminal using RealVNC and mobile hotspot
 
 import time
 import json
